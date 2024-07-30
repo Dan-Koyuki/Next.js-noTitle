@@ -1,16 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { useEditor, EditorContent } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
+import Tiptap from "./tiptapconf";
 
 const ContentManagementMenu = () => {
   const [activeMenu, setActiveMenu] = useState("Sejarah");
-
-  const editor = useEditor({
-    extensions: [StarterKit],
-    content: "<p>Hello World!</p>",
-  });
 
   const handleMenu = (menu) => {
     setActiveMenu(menu);
@@ -46,8 +40,8 @@ const ContentManagementMenu = () => {
           </p>
         ))}
       </div>
-      <div className="border-b-4 border-double mx-8">
-        <EditorContent editor={editor} className=""/>
+      <div className="mx-8">
+        <Tiptap content={"Hello world!"}/>
       </div>
     </div>
   );
